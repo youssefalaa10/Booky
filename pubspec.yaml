@@ -36,6 +36,8 @@ dependencies:
   google_fonts: ^4.0.3
   shimmer: ^2.0.0
   equatable: ^2.0.5
+  dartz: ^0.10.1
+  dio: ^5.1.1
 
 dev_dependencies:
   flutter_lints: ^2.0.0
