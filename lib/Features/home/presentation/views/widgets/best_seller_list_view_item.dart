@@ -1,6 +1,7 @@
 import 'package:booky/Features/home/data/models/book_model/book_model.dart';
 import 'package:booky/Features/home/presentation/views/widgets/custom_book_image_item.dart';
 import 'package:booky/core/utils/app_router.dart';
+import 'package:booky/core/utils/assets.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import '../../../../../constants.dart';
@@ -15,14 +16,18 @@ class BestSellerListViewItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        GoRouter.of(context).push(AppRouter.rBookDetailsView);
+        GoRouter.of(context).push(
+          AppRouter.rBookDetailsView,
+          extra: bookModel,
+        );
       },
       child: SizedBox(
         height: 125,
         child: Row(
           children: [
             CustomBookImage(
-                imageUrl: bookModel.volumeInfo.imageLinks?.thumbnail ?? ''),
+                imageUrl: bookModel.volumeInfo.imageLinks?.thumbnail ??
+                    AssetsData.testImage),
             const SizedBox(
               width: 30,
             ),
